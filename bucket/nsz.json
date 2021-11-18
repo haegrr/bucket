@@ -6,7 +6,8 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/nicoboss/nsz/releases/download/4.0.1/nsz_v4.0.1_win64_portable.zip",
-            "hash": "334178db38b97a5862ed00995ae62246678fa61c84cfdc43b21f1a4fd6866e48"
+            "hash": "334178db38b97a5862ed00995ae62246678fa61c84cfdc43b21f1a4fd6866e48",
+            "extract_dir": "nsz_v4.0.1_win64_portable"
         }
     },
     "bin": "nsz.exe",
@@ -17,8 +18,10 @@
         "architecture": {
             "64bit": {
                 "url": "https://github.com/nicoboss/nsz/releases/download/$version/nsz_v$version_win64_portable.zip",
-                "hash": "334178db38b97a5862ed00995ae62246678fa61c84cfdc43b21f1a4fd6866e48"
+                "hash": "334178db38b97a5862ed00995ae62246678fa61c84cfdc43b21f1a4fd6866e48",
+                "extract_dir": "nsz_v$version_win64_portable"
             }
         }
-    }
+    },
+    "notes": "You need to have a hactool compatible keys file in a suitable directory to use the script. The keys file must be located as prod.keys file in %USERPROFILE%/.switch"
 }
