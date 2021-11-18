@@ -1,0 +1,15 @@
+{
+    "version": "1.1.1",
+    "description": "Browse and edit PFS filesystems on APA-formatted hard drive",
+    "homepage": "https://github.com/ps2homebrew/pfsshell",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/ps2homebrew/pfsshell/releases/download/v1.1.1/pfsshell-v1.1.1-win32.7z",
+    "hash": "6354c617a510a2c1e56997a5839494df10485838f1f2bf72e32da6450826d015",
+    "bin": "pfsshell.exe",
+    "checkver": {
+        "github": "https://github.com/ps2homebrew/pfsshell"
+    },
+    "autoupdate": {
+        "url": "https://github.com/ps2homebrew/pfsshell/releases/download/v$version/pfsshell-v$version-win32.7z"
+    }
+}
