@@ -1,0 +1,34 @@
+{
+    "version": "7.21",
+    "description": "Fast and powerful lossless audio compressor",
+    "homepage": "https://monkeysaudio.com",
+    "license": "Freeware",
+    "architecture": {
+        "32bit": {
+            "url": "https://monkeysaudio.com/files/MAC_721.exe#/dl.7z",
+            "hash": "8634900049996065ac16b24d10df5566d69e58900fbe0463b4f8a2168e48bee0"
+        },
+        "64bit": {
+            "url": "https://monkeysaudio.com/files/MAC_721_x64.exe#/dl.7z",
+            "hash": "a6f1e544b1f5a9bc6d4e12513e326647c690fe8c0d100284b7cc426f3bea0f05"
+        }
+    },
+    "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$SYSDIR\", \"$dir\\uninstall.exe.nsis\", \"$dir\\Uninstaller.exe\" -Force -Recurse",
+    "bin": "MAC.exe",
+    "checkver": {
+        "url": "https://monkeysaudio.com/download.html",
+        "regex": "\\s+<h2>Monkey's Audio ([\\d.]+)</h2>"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://monkeysaudio.com/files/MAC_$cleanVersion.exe#/dl.7z",
+                "hash": "8634900049996065ac16b24d10df5566d69e58900fbe0463b4f8a2168e48bee0"
+            },
+            "64bit": {
+                "url": "https://monkeysaudio.com/files/MAC_$cleanVersion_x64.exe#/dl.7z",
+                "hash": "a6f1e544b1f5a9bc6d4e12513e326647c690fe8c0d100284b7cc426f3bea0f05"
+            }
+        }
+    }
+}
