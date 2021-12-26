@@ -1,0 +1,21 @@
+{
+    "version": "47",
+    "description": "Install games in HDLoader format to APA-formatted hard drive",
+    "homepage": "https://github.com/ps2homebrew/hdl-dump",
+    "license": "GPL-2.0-only",
+    "url": "https://github.com/ps2homebrew/hdl-dump/releases/download/v47/hdl_dumx_rev47.zip",
+    "hash": "73a3b49b299ae43ee7d24b4282b253b51f9ca2a3f41fe34602f3375e1e203790",
+    "bin": "hdl_dump.exe",
+    "shortcuts": [
+        [
+            "hdl_dumb.exe",
+            "HDL Dump"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/ps2homebrew/hdl-dump"
+    },
+    "autoupdate": {
+        "url": "https://github.com/ps2homebrew/hdl-dump/releases/download/v$version/hdl_dumx_rev$version.zip"
+    }
+}
