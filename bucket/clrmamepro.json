@@ -1,0 +1,39 @@
+{
+    "version": "4.044",
+    "description": "ROM manager",
+    "homepage": "https://mamedev.emulab.it/clrmamepro",
+    "license": "Freeware",
+    "architecture": {
+        "32bit": {
+            "url": "https://mamedev.emulab.it/clrmamepro/binaries/cmp4044_32.zip",
+            "hash": "cb056cc7037f778bb896dbcc5f3cfa1046a3f1c53b508838f7630bb37f5b33cc",
+            "shortcuts": [
+                [
+                    "cmpro.exe",
+                    "Clrmamepro"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://mamedev.emulab.it/clrmamepro/binaries/cmp4044_64.zip",
+            "hash": "91607c03b9719b7c34b9784116fc538a095ca9513d50f0aa90f0fd013b64305e",
+            "shortcuts": [
+                [
+                    "cmpro64.exe",
+                    "Clrmamepro"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "regex": "clrmamepro 32bit&nbsp;([\\d.]+)<"
+    },
+    "autoupdate": {
+        "32bit": {
+            "url": "https://mamedev.emulab.it/clrmamepro/binaries/cmp$cleanVersion_32.zip"
+        },
+        "64bit": {
+            "url": "https://mamedev.emulab.it/clrmamepro/binaries/cmp$cleanVersion_64.zip"
+        }
+    }
+}
