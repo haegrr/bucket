@@ -1,49 +1,46 @@
 {
-    "version": "2.1.19.1142",
+    "version": "2.1.20.1",
     "description": "A Simple ACME Client",
     "homepage": "https://www.win-acme.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.19.1142/win-acme.v2.1.19.1142.x64.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.19.1142/plugin.validation.dns.route53.v2.1.19.1142.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.20.1/win-acme.v2.1.20.1185.x64.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.20.1/plugin.validation.dns.route53.v2.1.20.1185.zip"
             ],
             "hash": [
-                "6a1389ab8d6e0d09a7c40265f44f3192741da384d8c3c846171bbe50122ac430",
-                "3c23fdf3f8ffa0a5268146a52d3520af75462c48a69c317ad01353912a11aa6c"
+                "a8bb26d489a4aebec90e95a26bba1f983821baf2089a5144ab8fe4c38d799cee",
+                "485977c60ddc2eb9f80a95abc32938e756ef0e29004a5093af07ef273bdd2bcc"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.19.1142/win-acme.v2.1.19.1142.x86.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.19.1142/plugin.validation.dns.route53.v2.1.19.1142.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.20.1/win-acme.v2.1.20.1185.x86.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.20.1/plugin.validation.dns.route53.v2.1.20.1185.zip"
             ],
             "hash": [
-                "05c80ff5333c2a9acb174c73e12f8b7cb35651c88fd9e30ea38ca89ce7854541",
-                "3c23fdf3f8ffa0a5268146a52d3520af75462c48a69c317ad01353912a11aa6c"
+                "c2743a11f0b36b7e57edaeeb84fb830bb0385cb6d7b3f697b426affa2bd19afc",
+                "485977c60ddc2eb9f80a95abc32938e756ef0e29004a5093af07ef273bdd2bcc"
             ]
         }
     },
     "pre_install": "if (!(Test-Path \"$persist_dir\\settings.json\")) { Copy-Item \"$dir\\settings_default.json\" \"$dir\\settings.json\" }",
     "bin": "wacs.exe",
     "persist": "settings.json",
-    "checkver": {
-        "github": "https://github.com/win-acme/win-acme",
-        "regex": "acme\\.v([\\d.]+)\\.x"
-    },
+    "checkver": "/releases/download/v([\\d.]+)/win-acme.v(?<build>[\\d.]+).x64",
     "autoupdate": {
         "architecture": {
             "64bit": {
                 "url": [
-                    "https://github.com/win-acme/win-acme/releases/download/v$version/win-acme.v$version.x64.pluggable.zip",
-                    "https://github.com/win-acme/win-acme/releases/download/v$version/plugin.validation.dns.route53.v$version.zip"
+                    "https://github.com/win-acme/win-acme/releases/download/v$version/win-acme.v$matchBuild.x64.pluggable.zip",
+                    "https://github.com/win-acme/win-acme/releases/download/v$version/plugin.validation.dns.route53.v$matchBuild.zip"
                 ]
             },
             "32bit": {
                 "url": [
-                    "https://github.com/win-acme/win-acme/releases/download/v$version/win-acme.v$version.x86.pluggable.zip",
-                    "https://github.com/win-acme/win-acme/releases/download/v$version/plugin.validation.dns.route53.v$version.zip"
+                    "https://github.com/win-acme/win-acme/releases/download/v$version/win-acme.v$matchBuild.x86.pluggable.zip",
+                    "https://github.com/win-acme/win-acme/releases/download/v$version/plugin.validation.dns.route53.v$matchBuild.zip"
                 ]
             }
         }
