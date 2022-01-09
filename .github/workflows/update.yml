@@ -28,11 +28,40 @@ jobs:
         }
         
         echo $shims >> $env:GITHUB_PATH
+    - name: Configure Git
+      run: |
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+    - name: Archive releases
+      id: archive-releases
+      shell: pwsh
+      run: |
+        if ((bin\checkver pfsfuse-dev 6>&1) -match "autoupdate") {
+          iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
+          $d = [datetime]::parse((iwr "https://api.github.com/repos/ps2homebrew/pfsshell/releases" | ConvertFrom-Json)[0].published_at)
+          $tag = "pfsfuse-dev-$("{0:yyyyMMddHHmmss}" -f $d)"
+          git commit --allow-empty -m "Update manifests"
+          git tag -m $tag $tag
+          git push origin $tag
+          gh release create $tag $env:TEMP\pfsfuse-win32.zip
+          echo "::set-output name=tag::$tag"
+        }
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Update manifests
       shell: pwsh
       run: |
         bin\checkver -u
-        git config user.name github-actions[bot]
-        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-        git commit -am "Update manifests"
-        git push
+
+        if ([string]::IsNullOrWhiteSpace($env:RELEASE_TAG)) {
+          git commit -am "Update manifests"
+          git push
+        } else {
+          git add .
+          git commit --amend --no-edit
+          git push -f
+          git tag -f -m $tag $tag
+          git push -f origin $tag
+        }
+      env:
+        RELEASE_TAG: ${{ steps.archive-releases.outputs.tag }}

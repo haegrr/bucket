@@ -1,0 +1,18 @@
+{
+    "version": "20220107201524",
+    "description": "PFS filesystems FUSE implementation",
+    "homepage": "https://github.com/ps2homebrew/pfsshell",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/kvadevack/bucket/releases/download/pfsfuse-dev-20220107201524/pfsfuse-win32.zip",
+    "hash": "0b6105b35719117fedf48de99bca4e7b8c600faf546c0cdef926e9e90d04806d",
+    "extract_dir": "pfsfuse-win32",
+    "bin": "pfsfuse.exe",
+    "checkver": {
+        "url": "https://github.com/ps2homebrew/pfsshell/releases/tag/latest",
+        "regex": "datetime=\"(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})T(?<hour>\\d{2}):(?<minute>\\d{2}):(?<second>\\d{2})Z\"",
+        "replace": "${year}${month}${day}${hour}${minute}${second}"
+    },
+    "autoupdate": {
+        "url": "https://github.com/kvadevack/bucket/releases/download/pfsfuse-dev-$version/pfsfuse-win32.zip"
+    }
+}
