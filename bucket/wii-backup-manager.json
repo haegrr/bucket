@@ -1,0 +1,33 @@
+{
+    "version": "78",
+    "description": "Manage Wii backups on your external hard drive and more",
+    "homepage": "http://www.wiibackupmanager.co.uk",
+    "license": "Freeware",
+    "url": "http://www.wiibackupmanager.co.uk/files/WiiBackupManager_Build78.zip",
+    "hash": "be913ae19093797d3fe5c15fda18b2bb6af99df5a48d1a579941e6f3b3cc8edd",
+    "architecture": {
+        "32bit": {
+            "shortcuts": [
+                [
+                    "WiiBackupManager_Win32.exe",
+                    "Wii Backup Manager"
+                ]
+            ]
+        },
+        "64bit": {
+            "shortcuts": [
+                [
+                    "WiiBackupManager_Win64.exe",
+                    "Wii Backup Manager"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "url": "http://www.wiibackupmanager.co.uk/downloads.html",
+        "regex": ">Wii Backup Manager Build (\\d+)<"
+    },
+    "autoupdate": {
+        "url": "http://www.wiibackupmanager.co.uk/files/WiiBackupManager_Build$version.zip"
+    }
+}
