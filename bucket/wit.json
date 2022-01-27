@@ -1,0 +1,38 @@
+{
+    "version": "3.04a",
+    "description": "A set of command line tools to manipulate Wii and GameCube ISO images and WBFS containers",
+    "homepage": "https://wit.wiimm.de",
+    "license": "GPL-2.0-or-later",
+    "architecture": {
+        "32bit": {
+            "url": "https://wit.wiimm.de/download/wit-v3.04a-r8427-cygwin32.zip",
+            "hash": "770897c6e73a38be13f3248a3abd949d1730ac7b1490fb3b724f4ddcc6241cc9",
+            "extract_dir": "wit-v3.04a-r8427-cygwin32"
+        },
+        "64bit": {
+            "url": "https://wit.wiimm.de/download/wit-v3.04a-r8427-cygwin64.zip",
+            "hash": "48999fda3c60c49f39eedeaeaad1181ee71560e05e432bc7248849841b0bb9ac",
+            "extract_dir": "wit-v3.04a-r8427-cygwin64"
+        }
+    },
+    "bin": [
+        "bin\\wdf-cat.exe",
+        "bin\\wdf-dump.exe",
+        "bin\\wdf.exe",
+        "bin\\wit.exe",
+        "bin\\wwt.exe"
+    ],
+    "checkver": ">wit-v([\\d.a-z]+)-r(?<revision>\\d+)-cygwin64\\.zip<",
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://wit.wiimm.de/download/wit-v$version-r$matchRevision-cygwin32.zip",
+                "extract_dir": "wit-v$version-r$matchRevision-cygwin32"
+            },
+            "64bit": {
+                "url": "https://wit.wiimm.de/download/wit-v$version-r$matchRevision-cygwin64.zip",
+                "extract_dir": "wit-v$version-r$matchRevision-cygwin64"
+            }
+        }
+    }
+}
