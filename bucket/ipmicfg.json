@@ -1,19 +1,19 @@
 {
-    "version": "1.33.0_build.210528",
+    "version": "1.33.1_build.211123",
     "description": "In-band utility for configuring IPMI devices",
     "homepage": "https://www.supermicro.com",
     "license": {
         "identifier": "Proprietary",
         "url": "https://www.supermicro.com/about/policies/disclaimer.cfm"
     },
-    "url": "https://www.supermicro.com/wdl/utility/IPMICFG/IPMICFG_1.33.0_build.210528.zip",
-    "hash": "25d3d6700346a0349053fd8c01b57fefd83d78510b22e59989702d5c62b40c82",
+    "url": "https://www.supermicro.com/wdl/utility/IPMICFG/IPMICFG_1.33.1_build.211123.zip",
+    "hash": "3d4d52155b7a2a882d96dd66844192d6be4a96c9d29b76e3750ba5731f1fe7b7",
     "architecture": {
         "32bit": {
-            "extract_dir": "IPMICFG_1.33.0_build.210528\\Windows\\32bit"
+            "extract_dir": "IPMICFG_1.33.1_build.211123\\Windows\\32bit"
         },
         "64bit": {
-            "extract_dir": "IPMICFG_1.33.0_build.210528\\Windows\\64bit"
+            "extract_dir": "IPMICFG_1.33.1_build.211123\\Windows\\64bit"
         }
     },
     "bin": [
