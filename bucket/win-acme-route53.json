@@ -1,27 +1,27 @@
 {
-    "version": "2.1.22.1260",
+    "version": "2.1.22.1267",
     "description": "A Simple ACME Client",
     "homepage": "https://www.win-acme.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1260/win-acme.v2.1.22.1260.x64.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1260/plugin.validation.dns.route53.v2.1.22.1260.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/win-acme.v2.1.22.1267.x64.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/plugin.validation.dns.route53.v2.1.22.1267.zip"
             ],
             "hash": [
-                "572119da42996777cac9a8023f8cfaa131b5bb0b0649b9c7e1fb0624136573a0",
-                "bc96260497945ed64c3220c02a877d8489380c03c6977d3846aef7e155cab51e"
+                "e91785a1b8246ed1e9ae07410597b60ce3632f1b2ff500fb1d3c2466af37d61c",
+                "a1e53456dd28e0b67b7c38b584c7ecc14fc7836da0131c42c8d1007c7cf21046"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1260/win-acme.v2.1.22.1260.x86.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1260/plugin.validation.dns.route53.v2.1.22.1260.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/win-acme.v2.1.22.1267.x86.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/plugin.validation.dns.route53.v2.1.22.1267.zip"
             ],
             "hash": [
-                "4b436b40adfd7e1852f330f7c88be93cb014178731fe4c2362fa0243201a7148",
-                "bc96260497945ed64c3220c02a877d8489380c03c6977d3846aef7e155cab51e"
+                "202f4759e641d85a555ad7c9908ac99e72b4911476bc502fc7ce0285d7c5bb15",
+                "a1e53456dd28e0b67b7c38b584c7ecc14fc7836da0131c42c8d1007c7cf21046"
             ]
         }
     },
