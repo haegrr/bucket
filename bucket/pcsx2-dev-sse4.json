@@ -1,5 +1,5 @@
 {
-    "version": "1.7.2757",
+    "version": "1.7.2758",
     "description": "Free and open-source PlayStation 2 emulator (development, SSE4 target)",
     "homepage": "https://pcsx2.net",
     "license": {
@@ -9,8 +9,8 @@
     "url": "https://github.com/PCSX2/pcsx2",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/PCSX2/pcsx2/releases/download/v1.7.2757/pcsx2-v1.7.2757-windows-64bit-SSE4.7z",
-            "hash": "3e788db698b36579fb77a1cb33b9d60aa3265ec13b38d22ca329ecc3014da04f",
+            "url": "https://github.com/PCSX2/pcsx2/releases/download/v1.7.2758/pcsx2-v1.7.2758-windows-64bit-SSE4.7z",
+            "hash": "17c28793847dd30b106dae0ada9320553acf2e20dcd126612388e744db117f68",
             "shortcuts": [
                 [
                     "pcsx2x64.exe",
