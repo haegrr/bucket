@@ -1,10 +1,10 @@
 {
-    "version": "20220314193550",
+    "version": "20220603083911",
     "description": "PFS filesystems FUSE implementation",
     "homepage": "https://github.com/ps2homebrew/pfsshell",
     "license": "GPL-3.0-only",
-    "url": "https://github.com/flygsand/bucket/releases/download/pfsfuse-dev-20220314193550/pfsfuse-win32.zip",
-    "hash": "9737fab5d26a0706d548581b4a4585dbc15ee68acf7402b46f837bff31daeeb0",
+    "url": "https://github.com/flygsand/bucket/releases/download/pfsfuse-dev-20220603083911/pfsfuse-win32.zip",
+    "hash": "916bdc2bdca4960c656b2f974a7dd8dde161c53926426386e8ada4e45d66ccc9",
     "extract_dir": "pfsfuse-win32",
     "bin": "pfsfuse.exe",
     "checkver": {
