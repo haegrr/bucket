@@ -1,27 +1,27 @@
 {
-    "version": "2.1.22.1267",
+    "version": "2.1.22.1289",
     "description": "A Simple ACME Client",
     "homepage": "https://www.win-acme.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/win-acme.v2.1.22.1267.x64.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/plugin.validation.dns.route53.v2.1.22.1267.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1289/win-acme.v2.1.22.1289.x64.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1289/plugin.validation.dns.route53.v2.1.22.1289.zip"
             ],
             "hash": [
-                "e91785a1b8246ed1e9ae07410597b60ce3632f1b2ff500fb1d3c2466af37d61c",
-                "a1e53456dd28e0b67b7c38b584c7ecc14fc7836da0131c42c8d1007c7cf21046"
+                "f6d1eaf7eedfcef319ef09960a0784b35491fce6a412091e6f63a3f77be2a4de",
+                "d5214021d086388b77343ae8e65bf180fe2acf50e086063ca1f94a856a1a207f"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/win-acme.v2.1.22.1267.x86.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1267/plugin.validation.dns.route53.v2.1.22.1267.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1289/win-acme.v2.1.22.1289.x86.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.1.22.1289/plugin.validation.dns.route53.v2.1.22.1289.zip"
             ],
             "hash": [
-                "202f4759e641d85a555ad7c9908ac99e72b4911476bc502fc7ce0285d7c5bb15",
-                "a1e53456dd28e0b67b7c38b584c7ecc14fc7836da0131c42c8d1007c7cf21046"
+                "c13081a7545c4fe53ef1d70aa4f45dd50659e7766a005e68b02dd51ab125e391",
+                "d5214021d086388b77343ae8e65bf180fe2acf50e086063ca1f94a856a1a207f"
             ]
         }
     },
