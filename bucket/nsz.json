@@ -1,13 +1,13 @@
 {
-    "version": "4.0.1",
+    "version": "4.1.0",
     "description": "Homebrew compatible NSP/XCI compressor/decompressor",
     "homepage": "https://github.com/nicoboss/nsz",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nicoboss/nsz/releases/download/4.0.1/nsz_v4.0.1_win64_portable.zip",
-            "hash": "334178db38b97a5862ed00995ae62246678fa61c84cfdc43b21f1a4fd6866e48",
-            "extract_dir": "nsz_v4.0.1_win64_portable"
+            "url": "https://github.com/nicoboss/nsz/releases/download/4.1.0/nsz_v4.1.0_win64_portable.zip",
+            "hash": "170f9967a976b338eb1f4b71c13a3a19fc86de6bf599301c2df758b6a7c3228d",
+            "extract_dir": "nsz_v4.1.0_win64_portable"
         }
     },
     "bin": "nsz.exe",
