@@ -1,0 +1,41 @@
+{
+    "version": "4.0.4",
+    "description": "Fast, standalone EPUB to Kobo EPUB conversion tool",
+    "homepage": "https://pgaskin.net/kepubify/",
+    "license": "MIT",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-windows-32bit.exe",
+            "hash": "5aa6be67f468e50e1b552a2eb1d1ac1afc375d1e7cb359e344f2e71d2dacdefb",
+            "bin": [
+                [
+                    "kepubify-windows-32bit.exe",
+                    "kepubify"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://github.com/pgaskin/kepubify/releases/download/v4.0.4/kepubify-windows-64bit.exe",
+            "hash": "f3dee3ece063329661fef474262fe403812335bf1676eab35b672565bf195738",
+            "bin": [
+                [
+                    "kepubify-windows-64bit.exe",
+                    "kepubify"
+                ]
+            ]
+        }
+    },
+    "checkver": {
+        "github": "https://github.com/pgaskin/kepubify"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/pgaskin/kepubify/releases/download/v$version/kepubify-windows-32bit.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/pgaskin/kepubify/releases/download/v$version/kepubify-windows-64bit.exe"
+            }
+        }
+    }
+}
