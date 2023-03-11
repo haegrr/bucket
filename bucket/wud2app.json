@@ -1,0 +1,16 @@
+{
+    "version": "1.1",
+    "description": "Convert wudump folders and .wud images into cert, tik, tmd and app files",
+    "homepage": "https://github.com/FIX94/wud2app",
+    "license": "MIT",
+    "url": "https://github.com/FIX94/wud2app/releases/download/v1.1/wud2app_v1.1.zip",
+    "hash": "b21d7470c3c285ed2f7551a44a882b66ff44eff660def4a308110e595fde54d6",
+    "extract_dir": "wud2app",
+    "bin": "wud2app.exe",
+    "checkver": {
+        "github": "https://github.com/FIX94/wud2app"
+    },
+    "autoupdate": {
+        "url": "https://github.com/FIX94/wud2app/releases/download/v$version/wud2app_v$version.zip"
+    }
+}
