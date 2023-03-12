@@ -1,12 +1,12 @@
 {
-    "version": "1.16.0",
+    "version": "1.19.0",
     "description": "Automation for downloads",
     "homepage": "https://autobrr.com",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "hash": "0c270f6661493f170e59270243bde09692e47b9924bf282ba095ec273aec3420",
-            "url": "https://github.com/autobrr/autobrr/releases/download/v1.16.0/autobrr_1.16.0_windows_x86_64.tar.gz"
+            "hash": "587bd16a385d641507464b95260637e08d78d82f07b4f2670e1bac928dcd918e",
+            "url": "https://github.com/autobrr/autobrr/releases/download/v1.19.0/autobrr_1.19.0_windows_x86_64.tar.gz"
         }
     },
     "bin": [

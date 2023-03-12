@@ -1,27 +1,27 @@
 {
-    "version": "2.1.23.1315",
+    "version": "2.2.1.1434",
     "description": "A Simple ACME Client",
     "homepage": "https://www.win-acme.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.23.1315/win-acme.v2.1.23.1315.x64.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.23.1315/plugin.validation.dns.cloudflare.v2.1.23.1315.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.1.1434/win-acme.v2.2.1.1434.x64.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.1.1434/plugin.validation.dns.cloudflare.v2.2.1.1434.zip"
             ],
             "hash": [
-                "9e310a037b25fc3a7c9b535f66b130e2c6a7f823af4d37967fc35293bf2ef715",
-                "233c8db76f1d15b61f56aeb1c72824fb9141cdfc5f35b1db47c0828de4f83667"
+                "256681544ce41a68e3488fe1d551ec64621e7c992cb0e239824738049f091494",
+                "403c3906abd8dbd1cbb0adc7b86846b0854157195018b233cbb9b4c0104ed9d1"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.23.1315/win-acme.v2.1.23.1315.x86.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.1.23.1315/plugin.validation.dns.cloudflare.v2.1.23.1315.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.1.1434/win-acme.v2.2.1.1434.x86.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.1.1434/plugin.validation.dns.cloudflare.v2.2.1.1434.zip"
             ],
             "hash": [
-                "50740ff6bfe48f8ab5c074aa672b2dbc73d8c886ae06602e11679e100a118954",
-                "233c8db76f1d15b61f56aeb1c72824fb9141cdfc5f35b1db47c0828de4f83667"
+                "ef58f7430cad20b2c24ff181e7a60e8722d57ab4949e2ab7d2c63fc385429e40",
+                "403c3906abd8dbd1cbb0adc7b86846b0854157195018b233cbb9b4c0104ed9d1"
             ]
         }
     },
