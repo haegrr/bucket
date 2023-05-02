@@ -1,12 +1,12 @@
 {
-    "version": "1.7.0",
+    "version": "1.8.0",
     "description": "Transform monitored shows and movies from the arrs into autobrr filters",
     "homepage": "https://autobrr.com",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "hash": "3ea1465b1da3992f5870e837478efe68de12a7686952d4de6c1ac8bf53523033",
-            "url": "https://github.com/autobrr/omegabrr/releases/download/v1.7.0/omegabrr_1.7.0_windows_x86_64.tar.gz"
+            "hash": "d193d62c30e6613e408febc6220a327958ab7d1cc7a32891ba7fe45d9c7db6ab",
+            "url": "https://github.com/autobrr/omegabrr/releases/download/v1.8.0/omegabrr_1.8.0_windows_x86_64.tar.gz"
         }
     },
     "bin": "omegabrr.exe",
