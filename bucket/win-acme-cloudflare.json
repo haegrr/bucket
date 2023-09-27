@@ -1,27 +1,27 @@
 {
-    "version": "2.2.5.1541",
+    "version": "2.2.6.1571",
     "description": "A Simple ACME Client",
     "homepage": "https://www.win-acme.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.5.1541/win-acme.v2.2.5.1541.x64.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.5.1541/plugin.validation.dns.cloudflare.v2.2.5.1541.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.6.1571/win-acme.v2.2.6.1571.x64.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.6.1571/plugin.validation.dns.cloudflare.v2.2.6.1571.zip"
             ],
             "hash": [
-                "ec14b0c89aad6dff3e626d28e1fff32daa8c36926c95b7df20b78367c4db0b26",
-                "7b10e9cbac254c1eee18802e55c351f811aad2415784b790a8ff88652b2479ec"
+                "c4151c48f530930c42b3e5e529d2f866e524eb421d8ed6c2c5b7d1b5c6116e12",
+                "1c03a048eb5abf4b588caa3bf450b7ed8c9ef6a3d2525f1f9520833a4a9dbeb9"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.5.1541/win-acme.v2.2.5.1541.x86.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.5.1541/plugin.validation.dns.cloudflare.v2.2.5.1541.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.6.1571/win-acme.v2.2.6.1571.x86.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.6.1571/plugin.validation.dns.cloudflare.v2.2.6.1571.zip"
             ],
             "hash": [
-                "afdf713a5310979235dc15f10a117f680df1e500d356d4f2aac78fd337e07543",
-                "7b10e9cbac254c1eee18802e55c351f811aad2415784b790a8ff88652b2479ec"
+                "34f9a671c64982001fb543e31772021abcfe7ee464d8818135f85cc83c36c352",
+                "1c03a048eb5abf4b588caa3bf450b7ed8c9ef6a3d2525f1f9520833a4a9dbeb9"
             ]
         }
     },
