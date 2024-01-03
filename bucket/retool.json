@@ -1,10 +1,10 @@
 {
-    "version": "2.01.8",
+    "version": "2.01.9",
     "description": "A better 1G1R creator for Redump and No-Intro dats",
     "homepage": "https://github.com/unexpectedpanda/retool",
     "license": "BSD-3-Clause",
-    "url": "https://github.com/unexpectedpanda/retool/releases/download/v2.01.8/retool-2.01.8-win-x86-64.zip",
-    "hash": "65268b0d3107717a31496fce6174e34bbc7fc115b6ef67bfd7f1298614824620",
+    "url": "https://github.com/unexpectedpanda/retool/releases/download/v2.01.9/retool-2.01.9-win-x86-64.zip",
+    "hash": "989b43fe94939f0fc1636df9c85fb6c006146098f1f4b3cc652e155f0e9d4066",
     "shortcuts": [
         [
             "retool-gui.exe",
