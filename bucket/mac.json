@@ -1,16 +1,16 @@
 {
-    "version": "10.71",
+    "version": "10.72",
     "description": "Fast and powerful lossless audio compressor",
     "homepage": "https://monkeysaudio.com",
     "license": "Freeware",
     "architecture": {
         "32bit": {
-            "url": "https://monkeysaudio.com/files/MAC_1071.exe#/dl.7z",
-            "hash": "9706b5cbbca69152211c3295d6ef91859e06e34fca3d8d2b89e042502829ff38"
+            "url": "https://monkeysaudio.com/files/MAC_1072.exe#/dl.7z",
+            "hash": "ceb10cc535a4811e7ba3e2b492858538bfb7b15c131c1a965b8136afdb591000"
         },
         "64bit": {
-            "url": "https://monkeysaudio.com/files/MAC_1071_x64.exe#/dl.7z",
-            "hash": "eadf43f1288dc02a8f9f089462f7b9a00e1d7b91a3e89896a1a393f25ac7e79b"
+            "url": "https://monkeysaudio.com/files/MAC_1072_x64.exe#/dl.7z",
+            "hash": "c3421e8fb2949ebbb9b57b2bf95f15fd477bb8c0bc008822c096b3db3fa9e5e1"
         }
     },
     "pre_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$SYSDIR\", \"$dir\\uninstall.exe.nsis\", \"$dir\\Uninstaller.exe\" -Force -Recurse",
