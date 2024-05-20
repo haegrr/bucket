@@ -1,27 +1,27 @@
 {
-    "version": "2.2.9.1680",
+    "version": "2.2.8.1635",
     "description": "A Simple ACME Client",
     "homepage": "https://www.win-acme.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.9.1680/win-acme.v2.2.9.1680.x64.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.9.1680/plugin.validation.dns.route53.v2.2.9.1680.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.8.1635/win-acme.v2.2.8.1635.x64.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.8.1635/plugin.validation.dns.route53.v2.2.8.1635.zip"
             ],
             "hash": [
-                "2997154533e51ad948cfd0cbcb52753ef819f74d6fcc263516d8bb4456da9ef9",
-                "341494a84d4e07748fa402515669073760bf58ebc78ea70d1249d9a4551fef5a"
+                "b56b5af39e079f121cb971eff560b7d2b976f4ee28750db1fd6b108159af7e17",
+                "c3ebb46b39cebd82ba6bba3098c94d9d45af912f9e5735a223f3a3a5e907ce77"
             ]
         },
         "32bit": {
             "url": [
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.9.1680/win-acme.v2.2.9.1680.x86.pluggable.zip",
-                "https://github.com/win-acme/win-acme/releases/download/v2.2.9.1680/plugin.validation.dns.route53.v2.2.9.1680.zip"
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.8.1635/win-acme.v2.2.8.1635.x86.pluggable.zip",
+                "https://github.com/win-acme/win-acme/releases/download/v2.2.8.1635/plugin.validation.dns.route53.v2.2.8.1635.zip"
             ],
             "hash": [
-                "28dea2fe576f5957c06a91dc8c29e02b7996226127d7c0c51c781b5bfd56c453",
-                "341494a84d4e07748fa402515669073760bf58ebc78ea70d1249d9a4551fef5a"
+                "fedc203984ab69c9ffba89272ab0c9a09e4b9550202ef176f1354e2dc3f5d7f0",
+                "c3ebb46b39cebd82ba6bba3098c94d9d45af912f9e5735a223f3a3a5e907ce77"
             ]
         }
     },
