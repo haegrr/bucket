@@ -1,10 +1,10 @@
 {
-    "version": "22.4",
+    "version": "23",
     "description": "OPL game collection manager",
     "homepage": "https://oplmanager.com",
     "license": "Freeware",
-    "url": "https://static.oplmanager.com/releases/OPL_Manager_V22.4.zip",
-    "hash": "76ebdb105305e1670d38baaa2d5513b5797199c5e1a97c0c2a95beb4f69c6425",
+    "url": "https://static.oplmanager.com/releases/OPL_Manager_V23.zip",
+    "hash": "1f16d8f2933bb9af4d3667c35bc76c71091e231660bec195e87f1c7b76be645f",
     "shortcuts": [
         [
             "OPL_Manager.exe",
