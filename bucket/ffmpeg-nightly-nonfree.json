@@ -1,16 +1,16 @@
 {
-    "version": "2022-12-12-13-27",
+    "version": "2024-06-23-12-27",
     "description": "A complete, cross-platform solution to record, convert and stream audio and video.",
     "homepage": "https://ffmpeg.org",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/m-2022-12-12-13-27/ffmpeg-c3e20f7-d2011d3-win32-nonfree.7z",
-            "hash": "5b0277245af02fc149056fa0f9e411ea69d66a022db537fb3e42d0c421aaeba3"
+            "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/2024-06-23-12-27-0b67c83-a541d49/ffmpeg-0b67c83-a541d49-win32-nonfree.7z",
+            "hash": "a6f1b29cc20e2a50503e2bd9d59ea02a160481d776a0db0e6718cdf92f03085e"
         },
         "64bit": {
-            "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/m-2022-12-12-13-27/ffmpeg-c3e20f7-d2011d3-win64-nonfree.7z",
-            "hash": "7fb4cf04f7a89254b6da08ce2deac98479895942a9db35a970a188dca23a52a2"
+            "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/2024-06-23-12-27-0b67c83-a541d49/ffmpeg-0b67c83-a541d49-win64-nonfree.7z",
+            "hash": "11770cfd0ba44ec47e3bd7e9b43d536683ed9217bfa2d30db5277a399c31aebe"
         }
     },
     "bin": [
@@ -19,17 +19,17 @@
         "ffprobe.exe"
     ],
     "checkver": {
-        "github": "https://github.com/AnimMouse/ffmpeg-autobuild",
-        "regex": "/download/m-(?<time>[\\d-]+)/ffmpeg-(?<commit>[a-z0-9]+)-(?<buildercommit>[a-z0-9]+)-win64-nonfree\\.7z",
-        "replace": "${time}"
+        "url": "https://api.github.com/repos/AnimMouse/ffmpeg-autobuild/releases/latest",
+        "jp": "$.assets[1].browser_download_url",
+        "re": "(?<version>[\\d-]+)-(?<commit>[a-z0-9]+)-(?<buildercommit>[a-z0-9]+)/ffmpeg-.+?-win64-nonfree\\.7z"
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/m-$version/ffmpeg-$matchCommit-$matchBuildercommit-win32-nonfree.7z"
+                "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/$version-$matchCommit-$matchBuildercommit/ffmpeg-$matchCommit-$matchBuildercommit-win32-nonfree.7z"
             },
             "64bit": {
-                "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/m-$version/ffmpeg-$matchCommit-$matchBuildercommit-win64-nonfree.7z"
+                "url": "https://github.com/AnimMouse/ffmpeg-autobuild/releases/download/$version-$matchCommit-$matchBuildercommit/ffmpeg-$matchCommit-$matchBuildercommit-win64-nonfree.7z"
             }
         }
     }
