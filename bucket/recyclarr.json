@@ -1,12 +1,12 @@
 {
-    "version": "7.3.0",
+    "version": "7.4.0",
     "description": "Automatically sync TRaSH guides to your Sonarr and Radarr instances",
     "homepage": "https://recyclarr.dev",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/recyclarr/recyclarr/releases/download/v7.3.0/recyclarr-win-x64.zip",
-            "hash": "adf57091efe688fdd3c744b885074c90e32dd0d76d0d7d3277d61548d2749191"
+            "url": "https://github.com/recyclarr/recyclarr/releases/download/v7.4.0/recyclarr-win-x64.zip",
+            "hash": "aba8aecf943552d62f7121f037cbced85a5744e1d2b3b89874e68ed8752538fa"
         }
     },
     "bin": "recyclarr.exe",
