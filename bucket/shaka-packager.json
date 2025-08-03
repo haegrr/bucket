@@ -1,0 +1,28 @@
+{
+    "version": "3.4.2",
+    "description": "A media packaging and development framework for VOD and Live DASH and HLS applications",
+    "homepage": "https://shaka-project.github.io/shaka-packager/html/",
+    "license": "BSD-3-Clause",
+    "architecture": {
+        "64bit": {
+            "hash": "18c91e9cf18037b1a1b8ceca738f0829c476fe38e20f733aa7ebba3cfe43765b",
+            "url": "https://github.com/shaka-project/shaka-packager/releases/download/v3.4.2/packager-win-x64.exe"
+        }
+    },
+    "bin": [
+        [
+            "packager-win-x64.exe",
+            "shaka-packager"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/shaka-project/shaka-packager"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/shaka-project/shaka-packager/releases/download/v$version/packager-win-x64.exe"
+            }
+        }
+    }
+}
