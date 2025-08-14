@@ -1,0 +1,30 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": {
+                "value": "\/Date(1755116957000)\/",
+                "DisplayHint": 2,
+                "DateTime": "Wednesday, August 13, 2025 8:29:17 PM"
+            },
+            "Manifests": 1400
+        }
+    ],
+    "apps": [
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "go",
+            "Version": "1.25.0",
+            "Updated": "\/Date(1680730445293)\/"
+        },
+        {
+            "Info": "",
+            "Source": "main",
+            "Name": "xcaddy",
+            "Version": "0.4.5",
+            "Updated": "\/Date(1679695801334)\/"
+        }
+    ]
+}
