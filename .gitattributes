@@ -2,3 +2,4 @@
 
 *.ps1            text    eol=crlf
 bucket/*.json    text    eol=crlf
+scoopfile.json   text    eol=crlf

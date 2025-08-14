@@ -10,58 +10,51 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v4.2.2
-    - name: Setup cache
+    - name: Configure cache
       uses: actions/cache@v4.2.3
       with:
-        path: ~\scoop
-        key: ${{ runner.os }}-scoop
+        path: ~\.cache\scoop
+        key: ${{ runner.os }}-${{ hashFiles('scoopfile.json') }}-v1
     - name: Install scoop
       shell: pwsh
       run: |
-        $shims = Join-Path (Resolve-Path ~).Path scoop\shims
-        $env:PATH += ";$shims"
-        
-        try {
-          scoop update
-        } catch {
-          iwr -useb get.scoop.sh | iex
-        }
-        
-        echo $shims >> $env:GITHUB_PATH
+        $env:SCOOP_CACHE = "$env:USERPROFILE\.cache\scoop"
+        iwr -useb get.scoop.sh | iex
+        echo $env:USERPROFILE\scoop\shims >> $env:GITHUB_PATH
+    - name: Install dependencies
+      shell: pwsh
+      run: |
+        scoop import scoopfile.json
     - name: Configure Git
       run: |
         git config user.name github-actions[bot]
         git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-    - name: Archive releases
-      id: archive-releases
-      shell: pwsh
-      run: |
-        if ((bin\checkver pfsfuse-dev 6>&1) -match "autoupdate") {
-          iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
-          $d = [datetime]::parse((iwr "https://api.github.com/repos/ps2homebrew/pfsshell/releases" | ConvertFrom-Json)[0].published_at)
-          $tag = "pfsfuse-dev-$("{0:yyyyMMddHHmmss}" -f $d)"
-          git commit --allow-empty -m "Update manifests"
-          git tag -m $tag $tag
-          git push origin $tag
-          gh release create $tag $env:TEMP\pfsfuse-win32.zip
-          echo "::set-output name=tag::$tag"
-        }
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Update manifests
       shell: pwsh
       run: |
-        bin\checkver -u
-
-        if ([string]::IsNullOrWhiteSpace($env:RELEASE_TAG)) {
-          git commit -am "Update manifests"
-          git push
-        } else {
-          git add .
-          git commit --amend --no-edit
-          git push -f
-          git tag -f -m $tag $tag
-          git push -f origin $tag
+        $pfsfuse = bin\checkver pfsfuse-dev 6>&1
+        if ($pfsfuse[3] -match "autoupdate") {
+          iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
+          $tag = "pfsfuse-dev-$($pfsfuse[1])"
+          git commit --allow-empty -m "$tag"
+          git tag -m $tag $tag
+          git push origin $tag
+          gh release create $tag $env:TEMP\pfsfuse-win32.zip
         }
+
+        $caddy = bin\checkver caddy-cloudflare 6>&1
+        if ($caddy[3] -match "autoupdate") {
+          xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare
+          Compress-Archive -Path $env:TEMP\caddy.exe -DestinationPath $env:TEMP\caddy.zip
+          $tag = "caddy-cloudflare-$($caddy[1])"
+          git commit --allow-empty -m "$tag"
+          git tag -m $tag $tag
+          git push origin $tag
+          gh release create $tag $env:TEMP\caddy.zip
+        }
+
+        bin\checkver -u
+        git commit -am "Update manifests"
+        git push
       env:
-        RELEASE_TAG: ${{ steps.archive-releases.outputs.tag }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
