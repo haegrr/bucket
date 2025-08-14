@@ -13,13 +13,15 @@ jobs:
     - name: Configure cache
       uses: actions/cache@v4.2.3
       with:
-        path: ~\.cache\scoop
-        key: ${{ runner.os }}-${{ hashFiles('scoopfile.json') }}-v1
+        path: ~\scoop
+        key: ${{ runner.os }}-${{ hashFiles('scoopfile.json') }}-v2
     - name: Install scoop
       shell: pwsh
       run: |
-        $env:SCOOP_CACHE = "$env:USERPROFILE\.cache\scoop"
-        iwr -useb get.scoop.sh | iex
+        if (-not (Test-Path $env:USERPROFILE\scoop\apps\scoop\current)) {
+          iwr -useb get.scoop.sh | iex
+        }
+        
         echo $env:USERPROFILE\scoop\shims >> $env:GITHUB_PATH
     - name: Install dependencies
       shell: pwsh
