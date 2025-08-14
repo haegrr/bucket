@@ -7,10 +7,6 @@
         "64bit": {
             "url": "https://github.com/flygsand/bucket/releases/download/caddy-cloudflare-2.10.0/caddy.zip",
             "hash": "19190bf9a7b484c23ec095f460c5801f9c0b20973689655ee841b64c6ffe5e59"
-        },
-        "arm64": {
-            "url": "https://github.com/caddyserver/caddy/releases/download/v2.10.0/caddy_2.10.0_windows_arm64.zip",
-            "hash": ""
         }
     },
     "bin": "caddy.exe",
