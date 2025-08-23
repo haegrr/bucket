@@ -1,12 +1,12 @@
 {
-    "version": "2.10.0",
+    "version": "2.10.1",
     "description": "HTTP/2 web server with automatic HTTPS",
     "homepage": "https://caddyserver.com",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/flygsand/bucket/releases/download/caddy-cloudflare-2.10.0/caddy.zip",
-            "hash": "19190bf9a7b484c23ec095f460c5801f9c0b20973689655ee841b64c6ffe5e59"
+            "url": "https://github.com/flygsand/bucket/releases/download/caddy-cloudflare-2.10.1/caddy.zip",
+            "hash": "065b713cee159089230409e8d6b32b15befd9792318c73aad7ede77c1eba9c22"
         }
     },
     "bin": "caddy.exe",
