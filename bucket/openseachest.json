@@ -1,0 +1,52 @@
+{
+    "version": "25.05.2",
+    "description": "Cross platform utilities useful for configuring features and assessing health on SATA, SAS, NVMe, and USB storage devices",
+    "homepage": "https://github.com/Seagate/openSeaChest",
+    "license": "MPL-2.0",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/Seagate/openSeaChest/releases/download/v25.05.2/openSeaChest-v25.05.2-win-x86.zip",
+            "hash": "89fbbfdf979d45cd971b02496dfc3a8b62ee8789ef714fb06a920c09fb996b9a",
+            "extract_dir": "openSeaChest-v25.05.2-win-x86"
+        },
+        "64bit": {
+            "url": "https://github.com/Seagate/openSeaChest/releases/download/v25.05.2/openSeaChest-v25.05.2-win-x64.zip",
+            "hash": "1e9f26da24b3e950bab1e1cacd2724d3974603b242591ec300921c3778e8d50b",
+            "extract_dir": "openSeaChest-v25.05.2-win-x64"
+        }
+    },
+    "bin": [
+        "openSeaChest_Basics.exe",
+        "openSeaChest_Configure.exe",
+        "openSeaChest_Defect.exe",
+        "openSeaChest_Erase.exe",
+        "openSeaChest_Firmware.exe",
+        "openSeaChest_Format.exe",
+        "openSeaChest_GenericTests.exe",
+        "openSeaChest_Info.exe",
+        "openSeaChest_Logs.exe",
+        "openSeaChest_NVMe.exe",
+        "openSeaChest_PassthroughTest.exe",
+        "openSeaChest_PowerControl.exe",
+        "openSeaChest_Raw.exe",
+        "openSeaChest_Reservations.exe",
+        "openSeaChest_Security.exe",
+        "openSeaChest_SMART.exe",
+        "openSeaChest_ZBD.exe"
+    ],
+    "checkver": {
+        "github": "https://github.com/Seagate/openSeaChest"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/Seagate/openSeaChest/releases/download/v$version/openSeaChest-v$version-win-x86.zip",
+                "extract_dir": "openSeaChest-v$version-win-x86"
+            },
+            "64bit": {
+                "url": "https://github.com/Seagate/openSeaChest/releases/download/v$version/openSeaChest-v$version-win-x64.zip",
+                "extract_dir": "openSeaChest-v$version-win-x64"
+            }
+        }
+    }
+}
