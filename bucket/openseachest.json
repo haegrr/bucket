@@ -1,18 +1,18 @@
 {
-    "version": "25.05.2",
+    "version": "25.05.3",
     "description": "Cross platform utilities useful for configuring features and assessing health on SATA, SAS, NVMe, and USB storage devices",
     "homepage": "https://github.com/Seagate/openSeaChest",
     "license": "MPL-2.0",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/Seagate/openSeaChest/releases/download/v25.05.2/openSeaChest-v25.05.2-win-x86.zip",
-            "hash": "89fbbfdf979d45cd971b02496dfc3a8b62ee8789ef714fb06a920c09fb996b9a",
-            "extract_dir": "openSeaChest-v25.05.2-win-x86"
+            "url": "https://github.com/Seagate/openSeaChest/releases/download/v25.05.3/openSeaChest-v25.05.3-win-x86.zip",
+            "hash": "c99160b20cde27ee9a542d9d61907f79669d4773fbeb2058ce52393a747abe4d",
+            "extract_dir": "openSeaChest-v25.05.3-win-x86"
         },
         "64bit": {
-            "url": "https://github.com/Seagate/openSeaChest/releases/download/v25.05.2/openSeaChest-v25.05.2-win-x64.zip",
-            "hash": "1e9f26da24b3e950bab1e1cacd2724d3974603b242591ec300921c3778e8d50b",
-            "extract_dir": "openSeaChest-v25.05.2-win-x64"
+            "url": "https://github.com/Seagate/openSeaChest/releases/download/v25.05.3/openSeaChest-v25.05.3-win-x64.zip",
+            "hash": "1e545ff185623e86ca47a9bb753d0e4dfe4a3c65736847f1fe1a69b2859a0227",
+            "extract_dir": "openSeaChest-v25.05.3-win-x64"
         }
     },
     "bin": [
