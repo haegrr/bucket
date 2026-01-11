@@ -1,0 +1,15 @@
+{
+    "version": "1.3",
+    "description": "A tool for creating images in AAI format (used by Dune HD media players)",
+    "homepage": "https://dune-hd.com/firmware/misc/",
+    "license": "Proprietary",
+    "url": "https://dune-hd.com/firmware/misc/AAImageGen.exe",
+    "hash": "201687ba0b6b6b9f789b8854651d9ea684a964356c385db84eebd4d0cc196c6e",
+    "shortcuts": [
+        [
+            "AAImageGen.exe",
+            "AAImageGen"
+        ]
+    ],
+    "bin": "AAImageGen.exe"
+}
