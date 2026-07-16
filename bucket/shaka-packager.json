@@ -1,12 +1,12 @@
 {
-    "version": "3.9.0",
+    "version": "3.9.1",
     "description": "A media packaging and development framework for VOD and Live DASH and HLS applications",
     "homepage": "https://shaka-project.github.io/shaka-packager/html/",
     "license": "BSD-3-Clause",
     "architecture": {
         "64bit": {
-            "hash": "3fe204b0772b0c84cfa813791a34670a9639340fe25c267b51f74c9a5ef62a28",
-            "url": "https://github.com/shaka-project/shaka-packager/releases/download/v3.9.0/packager-win-x64.exe"
+            "hash": "16debce4440e8702329aae0308a64693734b3d536e97aeee0b012b159fc957df",
+            "url": "https://github.com/shaka-project/shaka-packager/releases/download/v3.9.1/packager-win-x64.exe"
         }
     },
     "bin": [
