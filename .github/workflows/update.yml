@@ -31,32 +31,130 @@ jobs:
       run: |
         git config user.name github-actions[bot]
         git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-    - name: Update manifests
+    - name: Build and release pfsfuse-dev
       shell: pwsh
       run: |
         $pfsfuse = bin\checkver pfsfuse-dev 6>&1
-        if ($pfsfuse[3] -match "autoupdate") {
-          iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
-          $tag = "pfsfuse-dev-$($pfsfuse[1])"
-          git commit --allow-empty -m "$tag"
-          git tag -m $tag $tag
-          git push origin $tag
-          gh release create $tag $env:TEMP\pfsfuse-win32.zip
+        if ($pfsfuse[3] -notmatch "autoupdate") {
+          return
         }
 
+        iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
+        $tag = "pfsfuse-dev-$($pfsfuse[1])"
+        git commit --allow-empty -m "$tag"
+        git tag -m $tag $tag
+        git push origin $tag
+        gh release create $tag $env:TEMP\pfsfuse-win32.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and release caddy-cloudflare
+      shell: pwsh
+      run: |
         $caddy = bin\checkver caddy-cloudflare 6>&1
-        if ($caddy[3] -match "autoupdate") {
-          xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare
-          Compress-Archive -Path $env:TEMP\caddy.exe -DestinationPath $env:TEMP\caddy.zip
-          $tag = "caddy-cloudflare-$($caddy[1])"
-          git commit --allow-empty -m "$tag"
-          git tag -m $tag $tag
-          git push origin $tag
-          gh release create $tag $env:TEMP\caddy.zip
+        if ($caddy[3] -notmatch "autoupdate") {
+          return
         }
 
+        xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare
+        Compress-Archive -Path $env:TEMP\caddy.exe -DestinationPath $env:TEMP\caddy.zip
+        $tag = "caddy-cloudflare-$($caddy[1])"
+        git commit --allow-empty -m "$tag"
+        git tag -m $tag $tag
+        git push origin $tag
+        gh release create $tag $env:TEMP\caddy.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Check nvme-cli update
+      id: nvme_cli_check
+      shell: pwsh
+      run: |
+        $nvme = bin\checkver nvme-cli 6>&1
+        if ($nvme[3] -match "autoupdate") {
+          "changed=true" >> $env:GITHUB_OUTPUT
+          "version=$($nvme[1])" >> $env:GITHUB_OUTPUT
+          return
+        }
+
+        "changed=false" >> $env:GITHUB_OUTPUT
+
+    - name: Setup MSYS2 for nvme-cli
+      if: steps.nvme_cli_check.outputs.changed == 'true'
+      uses: msys2/setup-msys2@66cd2cce69caa17b53920067426061ca1de3a884 # v2.32.0
+      with:
+        msystem: UCRT64
+        update: true
+        install: >-
+          git
+          mingw-w64-ucrt-x86_64-gcc
+          mingw-w64-ucrt-x86_64-pkgconf
+          mingw-w64-ucrt-x86_64-meson
+          mingw-w64-ucrt-x86_64-ninja
+          mingw-w64-ucrt-x86_64-ccache
+          mingw-w64-ucrt-x86_64-json-c
+          mingw-w64-ucrt-x86_64-python-jsonschema
+          mingw-w64-ucrt-x86_64-github-cli
+
+    - name: Build and release nvme-cli
+      if: steps.nvme_cli_check.outputs.changed == 'true'
+      shell: msys2 {0}
+      run: |
+        set -euxo pipefail
+
+        version='${{ steps.nvme_cli_check.outputs.version }}'
+        tag="nvme-cli-$version"
+        temp_dir="$(cygpath -u "$RUNNER_TEMP")"
+        source_dir="$temp_dir/nvme-cli"
+        workspace_dir="$(cygpath -u "$GITHUB_WORKSPACE")"
+
+        git clone https://github.com/linux-nvme/nvme-cli.git "$source_dir"
+        cd "$source_dir"
+        git checkout "v$version"
+        git config --global --add safe.directory "$source_dir"
+
+        scripts/build.sh -b release -c /ucrt64/bin/gcc
+
+        artifact_dir="$temp_dir/package"
+        mkdir -p "$artifact_dir"
+        cp .build-ci/nvme.exe "$artifact_dir/"
+        for dll in .build-ci/*.dll; do
+          if [ -e "$dll" ]; then
+            cp "$dll" "$artifact_dir/"
+          fi
+        done
+        while IFS= read -r line; do
+          case "$line" in
+            *"=> /ucrt64/bin/"*.dll*)
+              path="${line#*=> }"
+              path="${path%% (*}"
+              cp -n "$path" "$artifact_dir/"
+              ;;
+          esac
+        done < <(ldd .build-ci/nvme.exe)
+
+        test -f "$artifact_dir/nvme.exe"
+        artifact="$temp_dir/nvme-cli.zip"
+        powershell.exe -NoProfile -Command "Compress-Archive -Path $(cygpath -w "$artifact_dir")\\* -DestinationPath $(cygpath -w "$artifact")"
+
+        cd "$workspace_dir"
+        git commit --allow-empty -m "$tag"
+        git tag -m "$tag" "$tag"
+        git push origin "$tag"
+        gh release create "$tag" "$artifact"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Update manifests
+      shell: pwsh
+      run: |
         bin\checkver -u
-        git commit -am "Update manifests"
+
+        $changes = git status --short -- bucket
+        if ($changes) {
+          git commit -am "Update manifests"
+        }
+
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
