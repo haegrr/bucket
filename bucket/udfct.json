@@ -5,7 +5,7 @@
     "license": {
         "url": "https://www.lscdweb.com/registered/udf_verifier.html"
     },
-    "url": "https://www.lscdweb.com/data/downloadables/7/4/sl04211udfct_1_5r6.zip?force-download=yes",
+    "url": "https://github.com/haegrr/bucket/releases/download/udfct-1.5r6/sl04211udfct_1_5r6.zip",
     "hash": "5355ba0f3c6e8cc07e5f3a2bdbe06194c16519636a3844f0a8303b011af8040b",
     "extract_dir": "udfct_1.5r6\\bin",
     "pre_install": [
@@ -13,13 +13,5 @@
         "Move-Item \"$dir\\win32-aspi\\wnaspi32.dll\" \"$dir\"",
         "Get-ChildItem -Directory \"$dir\" | Remove-Item -Recurse"
     ],
-    "bin": "udf_test.exe",
-    "checkver": {
-        "url": "https://www.lscdweb.com/registered/udf_verifier.html",
-        "regex": "<h2>Release ([\\w.]+)</h2>"
-    },
-    "autoupdate": {
-        "url": "https://www.lscdweb.com/data/downloadables/7/4/sl04211udfct_$underscoreVersion.zip?force-download=yes",
-        "extract_dir": "udfct_$version\\bin"
-    }
+    "bin": "udf_test.exe"
 }
