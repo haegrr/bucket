@@ -7,8 +7,8 @@
     "hash": "bc4217cf389d7d071e3c8a2aa114bc8f75723c70f5a618c4890b227f6731f8ff",
     "bin": "nvme.exe",
     "checkver": {
-        "url": "https://api.github.com/repos/linux-nvme/nvme-cli/releases?per_page=10",
-        "jsonpath": "$[?(@.prerelease == true)].tag_name",
+        "url": "https://api.github.com/repos/linux-nvme/nvme-cli/releases?per_page=1",
+        "jsonpath": "$[0].tag_name",
         "regex": "v([\\w.-]+)"
     },
     "autoupdate": {
