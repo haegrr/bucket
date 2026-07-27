@@ -1,10 +1,10 @@
 {
-    "version": "0.0.0",
+    "version": "3.0-b.3",
     "description": "NVMe user-space tooling for Linux and Windows",
     "homepage": "https://github.com/linux-nvme/nvme-cli",
     "license": "GPL-2.0-only",
-    "url": "https://github.com/flygsand/bucket/releases/download/nvme-cli-0.0.0/nvme-cli.zip",
-    "hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "url": "https://github.com/flygsand/bucket/releases/download/nvme-cli-3.0-b.3/nvme-cli.zip",
+    "hash": "bc4217cf389d7d071e3c8a2aa114bc8f75723c70f5a618c4890b227f6731f8ff",
     "bin": "nvme.exe",
     "checkver": {
         "url": "https://api.github.com/repos/linux-nvme/nvme-cli/releases?per_page=10",
