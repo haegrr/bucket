@@ -6,8 +6,11 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/flygsand/bucket/releases/download/nvme-cli-3.0-b.3/nvme-cli.zip",
-            "hash": "bc4217cf389d7d071e3c8a2aa114bc8f75723c70f5a618c4890b227f6731f8ff"
+            "hash": "7e2766f8d7a291a6af887907074aaffc171760814880c93e7756f8a3e20047da"
         }
+    },
+    "env_set": {
+        "PCI_IDS_PATH": "$dir\\pci.ids"
     },
     "bin": "nvme.exe",
     "checkver": {

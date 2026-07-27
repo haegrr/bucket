@@ -95,6 +95,7 @@ jobs:
           mingw-w64-ucrt-x86_64-json-c
           mingw-w64-ucrt-x86_64-python-jsonschema
           mingw-w64-ucrt-x86_64-github-cli
+          mingw-w64-ucrt-x86_64-curl
 
     - name: Build and release nvme-cli
       if: steps.nvme_cli_check.outputs.changed == 'true'
@@ -134,6 +135,9 @@ jobs:
         done < <(ldd .build-ci/nvme.exe)
 
         test -f "$artifact_dir/nvme.exe"
+
+        curl https://pci-ids.ucw.cz/v2.2/pci.ids -o "$artifact_dir/pci.ids"
+
         artifact="$temp_dir/nvme-cli.zip"
         powershell.exe -NoProfile -Command "Compress-Archive -Path $(cygpath -w "$artifact_dir")\\* -DestinationPath $(cygpath -w "$artifact")"
 
