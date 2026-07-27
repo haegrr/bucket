@@ -21,7 +21,7 @@ jobs:
         if (-not (Test-Path $env:USERPROFILE\scoop\apps\scoop\current)) {
           iwr -useb get.scoop.sh | iex
         }
-        
+
         echo $env:USERPROFILE\scoop\shims >> $env:GITHUB_PATH
     - name: Install dependencies
       shell: pwsh
@@ -40,11 +40,7 @@ jobs:
         }
 
         iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
-        $tag = "pfsfuse-dev-$($pfsfuse[1])"
-        git commit --allow-empty -m "$tag"
-        git tag -m $tag $tag
-        git push origin $tag
-        gh release create $tag $env:TEMP\pfsfuse-win32.zip
+        gh release create "pfsfuse-dev-$($pfsfuse[1])" $env:TEMP\pfsfuse-win32.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -58,11 +54,7 @@ jobs:
 
         xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare
         Compress-Archive -Path $env:TEMP\caddy.exe -DestinationPath $env:TEMP\caddy.zip
-        $tag = "caddy-cloudflare-$($caddy[1])"
-        git commit --allow-empty -m "$tag"
-        git tag -m $tag $tag
-        git push origin $tag
-        gh release create $tag $env:TEMP\caddy.zip
+        gh release create "caddy-cloudflare-$($caddy[1])" $env:TEMP\caddy.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -104,7 +96,7 @@ jobs:
         set -euxo pipefail
 
         version='${{ steps.nvme_cli_check.outputs.version }}'
-        tag="nvme-cli-$version"
+
         temp_dir="$(cygpath -u "$RUNNER_TEMP")"
         source_dir="$temp_dir/nvme-cli"
         workspace_dir="$(cygpath -u "$GITHUB_WORKSPACE")"
@@ -142,10 +134,7 @@ jobs:
         powershell.exe -NoProfile -Command "Compress-Archive -Path $(cygpath -w "$artifact_dir")\\* -DestinationPath $(cygpath -w "$artifact")"
 
         cd "$workspace_dir"
-        git commit --allow-empty -m "$tag"
-        git tag -m "$tag" "$tag"
-        git push origin "$tag"
-        gh release create "$tag" "$artifact"
+        gh release create "nvme-cli-$version" "$artifact"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -154,11 +143,17 @@ jobs:
       run: |
         bin\checkver -u
 
-        $changes = git status --short -- bucket
-        if ($changes) {
-          git commit -am "Update manifests"
+        $files = git diff --name-only -- bucket | Where-Object { $_ -like 'bucket/*.json' }
+        foreach ($file in $files) {
+          $package = [System.IO.Path]::GetFileNameWithoutExtension($file)
+          $version = (Get-Content $file | ConvertFrom-Json).version
+
+          git add -- $file
+          git commit -m "$package $version"
         }
 
-        git push
+        if ($files) {
+          git push
+        }
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
