@@ -1,22 +1,43 @@
 {
-    "version": "5.16",
-    "description": "exiftool GUI",
-    "homepage": "https://exiftool.org/gui/",
-    "license": "Freeware",
-    "url": "https://exiftool.org/gui/exiftoolgui516.zip",
-    "hash": "8a55daae8cbf342152a0cce53792c5eeec2f54c64f29cb94fd841674940f344f",
-    "extract_dir": "exiftoolgui",
-    "shortcuts": [
-        [
-            "ExifToolGUI.exe",
-            "ExifToolGUI"
-        ]
-    ],
+    "version": "6.3.12",
+    "description": "GUI for ExifTool",
+    "homepage": "https://github.com/FrankBijnen/ExifToolGui",
+    "license": "GPL-3.0-only",
+    "depends": "exiftool",
+    "architecture": {
+        "32bit": {
+            "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V6.3.12/ExifToolGUI.exe",
+            "hash": "59ca2b87b32502abbcfd51b4f4e605b6965bbbb5e11b37516b376afd1cab46dc",
+            "shortcuts": [
+                [
+                    "ExifToolGUI.exe",
+                    "ExifToolGUI"
+                ]
+            ]
+        },
+        "64bit": {
+            "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V6.3.12/ExifToolGUI_X64.exe",
+            "hash": "6c872bd6434dd00ccf6885ed330b9be7c3fa746b55e0f36ccec2c4925a644bff",
+            "shortcuts": [
+                [
+                    "ExifToolGUI_X64.exe",
+                    "ExifToolGUI"
+                ]
+            ]
+        }
+    },
     "checkver": {
-        "url": "https://exiftool.org/forum/index.php?topic=2750.0",
-        "regex": "Latest ExiftoolGUI version ([\\d.]+)"
+        "github": "https://github.com/FrankBijnen/ExifToolGui",
+        "regex": "V([\\d.]+)"
     },
     "autoupdate": {
-        "url": "https://exiftool.org/gui/exiftoolgui$cleanVersion.zip"
+        "architecture": {
+            "32bit": {
+                "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V$version/ExifToolGUI.exe"
+            },
+            "64bit": {
+                "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V$version/ExifToolGUI_X64.exe"
+            }
+        }
     }
 }
