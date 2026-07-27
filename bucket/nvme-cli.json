@@ -5,7 +5,7 @@
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/flygsand/bucket/releases/download/nvme-cli-3.0-b.3/nvme-cli.zip",
+            "url": "https://github.com/haegrr/bucket/releases/download/nvme-cli-3.0-b.3/nvme-cli.zip",
             "hash": "7e2766f8d7a291a6af887907074aaffc171760814880c93e7756f8a3e20047da"
         }
     },
@@ -21,7 +21,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/flygsand/bucket/releases/download/nvme-cli-$version/nvme-cli.zip"
+                "url": "https://github.com/haegrr/bucket/releases/download/nvme-cli-$version/nvme-cli.zip"
             }
         }
     }

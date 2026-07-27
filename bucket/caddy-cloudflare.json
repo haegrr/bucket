@@ -5,7 +5,7 @@
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/flygsand/bucket/releases/download/caddy-cloudflare-2.11.4/caddy.zip",
+            "url": "https://github.com/haegrr/bucket/releases/download/caddy-cloudflare-2.11.4/caddy.zip",
             "hash": "9252e4565387febae472bcf3af8a3a5247e86235f0f687ddf8fd910fe5702a02"
         }
     },
@@ -16,7 +16,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/flygsand/bucket/releases/download/caddy-cloudflare-$version/caddy.zip"
+                "url": "https://github.com/haegrr/bucket/releases/download/caddy-cloudflare-$version/caddy.zip"
             }
         }
     }
