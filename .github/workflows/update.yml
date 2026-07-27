@@ -39,8 +39,14 @@ jobs:
           return
         }
 
+        $tag = "pfsfuse-dev-$($pfsfuse[1])"
+        gh release view $tag *> $null
+        if ($LASTEXITCODE -eq 0) {
+          return
+        }
+
         iwr "https://github.com/ps2homebrew/pfsshell/releases/download/latest/pfsfuse-win32.zip" -OutFile $env:TEMP\pfsfuse-win32.zip
-        gh release create "pfsfuse-dev-$($pfsfuse[1])" $env:TEMP\pfsfuse-win32.zip
+        gh release create $tag $env:TEMP\pfsfuse-win32.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -52,9 +58,15 @@ jobs:
           return
         }
 
+        $tag = "caddy-cloudflare-$($caddy[1])"
+        gh release view $tag *> $null
+        if ($LASTEXITCODE -eq 0) {
+          return
+        }
+
         xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare
         Compress-Archive -Path $env:TEMP\caddy.exe -DestinationPath $env:TEMP\caddy.zip
-        gh release create "caddy-cloudflare-$($caddy[1])" $env:TEMP\caddy.zip
+        gh release create $tag $env:TEMP\caddy.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -64,6 +76,13 @@ jobs:
       run: |
         $nvme = bin\checkver nvme-cli 6>&1
         if ($nvme[3] -match "autoupdate") {
+          $tag = "nvme-cli-$($nvme[1])"
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+            "changed=false" >> $env:GITHUB_OUTPUT
+            return
+          }
+
           "changed=true" >> $env:GITHUB_OUTPUT
           "version=$($nvme[1])" >> $env:GITHUB_OUTPUT
           return
@@ -128,7 +147,7 @@ jobs:
 
         test -f "$artifact_dir/nvme.exe"
 
-        curl https://pci-ids.ucw.cz/v2.2/pci.ids -o "$artifact_dir/pci.ids"
+        curl -fL https://pci-ids.ucw.cz/v2.2/pci.ids -o "$artifact_dir/pci.ids"
 
         artifact="$temp_dir/nvme-cli.zip"
         powershell.exe -NoProfile -Command "Compress-Archive -Path $(cygpath -w "$artifact_dir")\\* -DestinationPath $(cygpath -w "$artifact")"
