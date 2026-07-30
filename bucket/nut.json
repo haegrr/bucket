@@ -98,6 +98,10 @@
         "sbin\\upsmon.exe",
         "sbin\\upssched.exe"
     ],
+    "persist": [
+        "etc",
+        "var\\run"
+    ],
     "checkver": {
         "github": "https://github.com/networkupstools/nut"
     },
