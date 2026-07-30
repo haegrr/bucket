@@ -7,7 +7,10 @@
         "64bit": {
             "hash": "a226b9e402e589f3d14118d8d07ef2cdb4e28bc3e30d55de47fef46abdf4dfb0",
             "url": "https://github.com/networkupstools/nut/releases/download/v2.8.5/NUT-for-Windows-x86_64-RELEASE-2.8.5-1-fixNSS.7z",
-            "extract_dir": "mingw64"
+            "pre_install": [
+                "Move-Item -Path \"$dir\\NUT-for-Windows-*\\mingw64\\*\" -Destination \"$dir\"",
+                "Remove-Item -Path \"$dir\\NUT-for-Windows-*\" -Recurse -Force"
+            ]
         }
     },
     "bin": [
