@@ -1,12 +1,12 @@
 {
-    "version": "3.0-b.3",
+    "version": "3.0-b.4",
     "description": "NVMe user-space tooling for Linux and Windows",
     "homepage": "https://github.com/linux-nvme/nvme-cli",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/haegrr/bucket/releases/download/nvme-cli-3.0-b.3/nvme-cli.zip",
-            "hash": "7e2766f8d7a291a6af887907074aaffc171760814880c93e7756f8a3e20047da"
+            "url": "https://github.com/haegrr/bucket/releases/download/nvme-cli-3.0-b.4/nvme-cli.zip",
+            "hash": "ee54e6421a4b7af24d9ed2d10e934de54185e145ee72558593e753614688bef8"
         }
     },
     "env_set": {
