@@ -38,22 +38,22 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build and release caddy-cloudflare
+    - name: Build and release caddy-custom
       shell: pwsh
       run: |
-        $caddy = bin\checkver caddy-cloudflare 6>&1
+        $caddy = bin\checkver caddy-custom 6>&1
         if ($caddy[3] -notmatch "autoupdate") {
           return
         }
 
-        $tag = "caddy-cloudflare-$($caddy[1])"
+        $tag = "caddy-custom-$($caddy[1])"
         gh release view $tag *> $null
         if ($LASTEXITCODE -eq 0) {
           return
         }
 
         scoop install xcaddy
-        xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare
+        xcaddy build v$($caddy[1]) --output $env:TEMP\caddy.exe --with github.com/caddy-dns/cloudflare --with github.com/aksdb/caddy-cgi/v2
         Compress-Archive -Path $env:TEMP\caddy.exe -DestinationPath $env:TEMP\caddy.zip
         gh release create $tag $env:TEMP\caddy.zip
       env:
