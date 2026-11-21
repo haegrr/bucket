@@ -1,13 +1,13 @@
 {
-    "version": "6.3.12",
+    "version": "6.3.13",
     "description": "GUI for ExifTool",
     "homepage": "https://github.com/FrankBijnen/ExifToolGui",
     "license": "GPL-3.0-only",
     "depends": "exiftool",
     "architecture": {
         "32bit": {
-            "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V6.3.12/ExifToolGUI.exe",
-            "hash": "59ca2b87b32502abbcfd51b4f4e605b6965bbbb5e11b37516b376afd1cab46dc",
+            "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V6.3.13/ExifToolGUI.exe",
+            "hash": "d808ddfff7bb9324946bac900e7ea78e4ee5b15573a90771c4d14dbee4bd3fbe",
             "shortcuts": [
                 [
                     "ExifToolGUI.exe",
@@ -16,8 +16,8 @@
             ]
         },
         "64bit": {
-            "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V6.3.12/ExifToolGUI_X64.exe",
-            "hash": "6c872bd6434dd00ccf6885ed330b9be7c3fa746b55e0f36ccec2c4925a644bff",
+            "url": "https://github.com/FrankBijnen/ExifToolGui/releases/download/V6.3.13/ExifToolGUI_X64.exe",
+            "hash": "7445c4e37bb01db173ca19f8670d5dc1b12a411ffef0a23fbd551e30bfef6002",
             "shortcuts": [
                 [
                     "ExifToolGUI_X64.exe",
